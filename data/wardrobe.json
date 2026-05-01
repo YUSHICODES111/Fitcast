@@ -1,0 +1,48 @@
+[
+  {
+    "id": "1777586390691-815945",
+    "name": "White Linen Shirt",
+    "category": "top",
+    "type": "shirt",
+    "color": "",
+    "tags": [
+      "hot",
+      "breathable",
+      "everyday"
+    ]
+  },
+  {
+    "id": "1777586390717-351609",
+    "name": "Watch",
+    "category": "accessory",
+    "type": "watch",
+    "color": "",
+    "tags": [
+      "everyday"
+    ]
+  },
+  {
+    "id": "1777587235456-605496",
+    "name": "black shirt,grey cargo",
+    "category": "outerwear",
+    "type": "shirt,jeans",
+    "color": "black,grey",
+    "tags": [
+      "hot"
+    ]
+  },
+  {
+    "id": "1777623467547-241839",
+    "name": "black shirt, brown jeans",
+    "category": "outerwear",
+    "type": "shirt,jeans",
+    "color": "black,brown",
+    "colorTone": "neutral",
+    "fit": "loose",
+    "warmth": "medium",
+    "fabric": "denim,nylon",
+    "tags": [
+      "hot"
+    ]
+  }
+]

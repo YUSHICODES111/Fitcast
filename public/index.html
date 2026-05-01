@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitCast - Outfit from Weather</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="bg-blur bg-one"></div>
+    <div class="bg-blur bg-two"></div>
+
+    <main class="container">
+      <header class="topbar card">
+        <div class="brand">
+          <span class="brand-dot"></span>
+          <strong>FitCast</strong>
+        </div>
+        <p class="topbar-text">AI-inspired weather styling assistant</p>
+      </header>
+
+      <section class="hero card">
+        <div class="hero-left">
+          <p class="eyebrow">Smart Outfit Intelligence</p>
+          <h1>FitCast: Outfit Planner from Live Weather</h1>
+          <p>
+            Build your digital wardrobe, check your city weather, and get multiple
+            weather-smart looks in seconds.
+          </p>
+          <div class="hero-badges">
+            <span>Live weather</span>
+            <span>3 outfit vibes</span>
+            <span>Mobile friendly</span>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="preview-chip">Trending UI</div>
+          <div class="preview-card">
+            <p>Today&apos;s vibe</p>
+            <h3>Smart Comfort</h3>
+            <span>26°C · Mild · Light wind</span>
+          </div>
+          <div class="preview-tags">
+            <span>Linen shirt</span>
+            <span>Beige chinos</span>
+            <span>White sneakers</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h2>1) Add to Wardrobe</h2>
+          <p class="section-note">Add item details for better analysis accuracy.</p>
+          <form id="wardrobe-form" class="stack">
+            <input id="name" required placeholder="Item name (e.g. Blue Denim Jacket)" />
+            <div class="row">
+              <select id="category" required>
+                <option value="">Category</option>
+                <option value="top">Top</option>
+                <option value="bottom">Bottom</option>
+                <option value="footwear">Footwear</option>
+                <option value="outerwear">Outerwear</option>
+                <option value="accessory">Accessory</option>
+              </select>
+              <input id="type" required placeholder="Type (e.g. shirt, jeans, sneakers)" />
+            </div>
+            <div class="row">
+              <input id="color" placeholder="Color" />
+              <select id="color-tone">
+                <option value="neutral">Color tone</option>
+                <option value="light">Light</option>
+                <option value="neutral">Neutral</option>
+                <option value="dark">Dark</option>
+                <option value="bright">Bright</option>
+              </select>
+            </div>
+            <div class="row">
+              <select id="fit">
+                <option value="regular">Fit type</option>
+                <option value="loose">Loose</option>
+                <option value="regular">Regular</option>
+                <option value="fitted">Fitted</option>
+              </select>
+              <select id="warmth">
+                <option value="medium">Warmth</option>
+                <option value="light">Light</option>
+                <option value="medium">Medium</option>
+                <option value="heavy">Heavy</option>
+              </select>
+            </div>
+            <div class="row">
+              <input
+                id="tags"
+                placeholder="Tags: hot,cold,rainy,breathable,water-resistant,everyday,layer"
+              />
+              <input id="fabric" placeholder="Fabric (e.g. linen, cotton, wool)" />
+            </div>
+            <button type="submit">Save Item</button>
+          </form>
+        </article>
+
+        <article class="card">
+          <h2>2) Check Live Weather</h2>
+          <p class="section-note">Set your profile so recommendations feel personal.</p>
+          <div class="stack">
+            <div class="row">
+              <input id="city" placeholder="Enter city (e.g. Mumbai)" />
+              <button id="fetch-weather" type="button">Check</button>
+            </div>
+            <div class="row">
+              <select id="body-type">
+                <option value="balanced">Body type</option>
+                <option value="petite">Petite</option>
+                <option value="athletic">Athletic</option>
+                <option value="curvy">Curvy</option>
+                <option value="tall">Tall</option>
+                <option value="balanced">Balanced</option>
+              </select>
+              <select id="fit-preference">
+                <option value="regular">Preferred fit</option>
+                <option value="loose">Loose</option>
+                <option value="regular">Regular</option>
+                <option value="fitted">Fitted</option>
+              </select>
+            </div>
+            <div class="row">
+              <select id="color-preference">
+                <option value="neutral">Preferred color tone</option>
+                <option value="light">Light</option>
+                <option value="neutral">Neutral</option>
+                <option value="dark">Dark</option>
+                <option value="bright">Bright</option>
+              </select>
+              <select id="heat-tolerance">
+                <option value="medium">Heat tolerance</option>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+              </select>
+            </div>
+            <div id="weather-panel" class="panel muted">No weather loaded yet.</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>3) Get Outfit Ideas</h2>
+          <p class="section-note">Receive wear/caution/avoid decisions instantly.</p>
+          <div class="stack">
+            <button id="suggest-btn" type="button">Generate 3 Looks</button>
+            <div id="suggestion-panel" class="panel muted">
+              Add wardrobe items and enter your city to generate your outfit options.
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="card">
+        <div class="list-title">
+          <h2>Your Wardrobe</h2>
+          <p id="count" class="muted">0 items</p>
+        </div>
+        <p class="section-note">Your saved pieces appear here and power every suggestion.</p>
+        <div id="wardrobe-list" class="wardrobe-list"></div>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
